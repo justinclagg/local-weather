@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+	<title>Your Local Weather</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Displays your local weather using geolocation.">
+	<meta name="author" content="Justin Clagg">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../justinclagg.github.io/assets/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+	<link rel="stylesheet" type="text/css" href="../justinclagg.github.io/assets/css/project-footer.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" defer></script>
+	<script type="text/javascript" src="./script.js" defer></script>
+</head>
+<body>
+	<div class="weather-box loading">
+		<div class="weather-info">
+			<p class="temperature-group">
+				<span id="currentTemp"></span><a id="fahrenheit" class="superscript active" href="#">&deg;F</a><span class="superscript">|</span><a id="celsius" class="superscript" href="#">&deg;C</a>
+			</p>
+			<p id="location">Loading</h3>
+			<p id="description"></p>
+		</div>
+	</div>
+	<div class="credit-text">Weather data provided by <a class="active" href="https://openweathermap.org/" target="_blank">openweathermap.org.</a></div>	
+	<footer class="project-footer">
+		<p>Copyright © 2016 Justin Clagg</p>
+		<a href="http://www.justinclagg.com">Portfolio</a>
+		<a href="https://github.com/justinclagg/local-weather" target="_blank">Source</a>
+	</footer>
+</body>
+</html>

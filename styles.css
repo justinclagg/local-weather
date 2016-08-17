@@ -1,0 +1,75 @@
+
+html {
+  /* Covers full height on mobile */
+  min-height: 100%;
+}
+
+body {
+	color: #656565;
+	font-family: 'Lato', sans-serif;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+a {
+	color: #CCC;
+	text-decoration: none;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+}
+
+a:hover,
+.active {
+	color: #656565;
+	text-decoration: none;
+}
+
+.weather-box {
+	width: 230px;
+	height: 190px;
+	margin: 0 auto;
+	margin-top: 15%;
+	border-radius: 20px;
+	overflow: hidden;
+	background-color: rgba(255,255,255, 0.8);
+	box-shadow: 1px 1px 3px #CCC;
+}
+
+.weather-info {
+	margin: 10px 0 0 30px;
+}
+
+.temperature-group {
+	font-size: 80px;
+}
+
+#location {
+	font-size: 30px;
+}
+
+#description {
+	font-size: 20px;
+}
+
+.superscript {
+	vertical-align: super;
+	font-size: 35px;
+}
+
+.loading {
+	display: none;
+}
+
+.credit-text {
+	position: absolute;
+	bottom: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 12px;
+}
