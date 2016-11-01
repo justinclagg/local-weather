@@ -35,14 +35,14 @@ $(document).ready(function() {
 	function weatherByIP() {
 		$.ajax({
 			dataType: "json",
-			url: "http://freegeoip.net/json/"
+			url: "http://ip-api.com/json"
 		})
 		.done(function(json) {
-			displayWeather(json.latitude, json.longitude);
+			displayWeather(json.lat, json.lon, json.city);
 		});
 	}
   
-	function displayWeather(lat, long) {
+	function displayWeather(lat, long, city) {
 		var weatherAPI = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&APPID=837f371adf5a889d3380e7bf5f1f4e27";
 		$.ajax({
 			dataType: "json",
@@ -50,7 +50,7 @@ $(document).ready(function() {
 		})
 		.done(function(json) {
 			// Display the city name
-			$("#location").html(json.name);
+			$("#location").html(city);
 			// Calculate and display temperature values
 			currTempK = json.main.temp;
 			currTempC = Math.round(currTempK - 273.15);
