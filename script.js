@@ -10,14 +10,16 @@ $(document).ready(function() {
 		maximumAge: 30000
 	};
 
-	if (navigator.geolocation) {
-		// Get current position if geolocation API is supported
-		navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
-	}
-	else {
+	/* Currently switched to IP location only. Geolocation not supported on http, and openweathermap doesn't support https */
+
+	// if (navigator.geolocation) {
+	// 	// Get current position if geolocation API is supported
+	// 	navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+	// }
+	// else {
 		// Otherwise use IP to approximate location
 		weatherByIP();
-	}
+	// }
 
 	function geoSuccess(position) {
 		var lat = position.coords.latitude;
@@ -33,7 +35,7 @@ $(document).ready(function() {
 	function weatherByIP() {
 		$.ajax({
 			dataType: "json",
-			url: "https://freegeoip.net/json/"
+			url: "http://freegeoip.net/json/"
 		})
 		.done(function(json) {
 			displayWeather(json.latitude, json.longitude);
