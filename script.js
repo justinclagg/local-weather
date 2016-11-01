@@ -1,6 +1,4 @@
-
 $(document).ready(function() {
-
 	"use strict";
 
 	var currTempK, currTempC, currTempF;
@@ -12,12 +10,12 @@ $(document).ready(function() {
 		maximumAge: 30000
 	};
 
-	// Get current position if geolocation API is supported
 	if (navigator.geolocation) {
+		// Get current position if geolocation API is supported
 		navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
 	}
-	// Otherwise use IP to approximate location
 	else {
+		// Otherwise use IP to approximate location
 		weatherByIP();
 	}
 
@@ -35,10 +33,10 @@ $(document).ready(function() {
 	function weatherByIP() {
 		$.ajax({
 			dataType: "json",
-			url: "http://ip-api.com/json"
+			url: "https://freegeoip.net/json/"
 		})
 		.done(function(json) {
-			displayWeather(json.lat, json.lon);
+			displayWeather(json.latitude, json.longitude);
 		});
 	}
   
