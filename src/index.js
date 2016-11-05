@@ -35,13 +35,14 @@ $(document).ready(function () {
 	function weatherByIP() {
 		$.ajax({
 			dataType: 'json',
-			url: 'http://ip-api.com/json'
+			url: 'https://freegeoip.net/json/'
 		})
 		.done(json => {
 			displayWeather(json.lat, json.lon, json.city);
 		});
 	}
 
+	// Darksky.net does not provide city name, so Google's API is used
 	function getCity(lat, lon) {
 		$.ajax({
 			dataType: 'json',
@@ -58,14 +59,14 @@ $(document).ready(function () {
 	function displayWeather(lat, lon, city) {
 		const weatherAPI = `https://api.darksky.net/forecast/${process.env.DARKSKY_SECRET}/${lat},${lon}?exclude=minutely,hourly,daily,alerts,flags`;
 		$.ajax({
-			dataType: 'json',
+			dataType: 'jsonp',
 			url: weatherAPI
 		})
 		.done(function (json) {
 			$('#location').html(city);
 			// Calculate and display temperature values
-			currTempC = Math.round(json.currently.temperature);
-			currTempF = Math.round(currTempC * 9 / 5 + 32);
+			currTempF = Math.round(json.currently.temperature);
+			currTempC = Math.round((currTempF - 32) * 5 / 9);
 			$('#currentTemp').html(currTempF);
 			// Background images
 			const clearSkyDay = './img/clearSky_day.jpg';
@@ -112,6 +113,9 @@ $(document).ready(function () {
 				$('body').css('background-image', 'url(\'' + snowDay + '\')');
 				$('#description').html('Snow');
 				break;
+			default:
+				$('body').css('background-image', 'url(\'' + fewCloudsDay + '\')');
+				$('#description').html(json.currently.summary);
 			}
 			// Displays the weather data once loaded
 			$('.weather-box').removeClass('loading');

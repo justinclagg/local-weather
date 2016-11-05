@@ -31,7 +31,7 @@ a:hover,
 }
 
 .weather-box {
-	width: 230px;
+	width: 250px;
 	height: 190px;
 	margin: 0 auto;
 	margin-top: 15%;
@@ -42,7 +42,7 @@ a:hover,
 }
 
 .weather-info {
-	margin: 10px 0 0 30px;
+	margin: 10px 0 0 40px;
 }
 
 .temperature-group {
