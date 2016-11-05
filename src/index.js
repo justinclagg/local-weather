@@ -8,7 +8,7 @@ $(document).ready(function () {
 	// Parameters for getCurrentPosition()
 	const geoOptions = {
 		enableHighAccuracy: true,
-		timeout: 2000,
+		timeout: 5000,
 		maximumAge: 30000
 	};
 
