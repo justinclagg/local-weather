@@ -15,12 +15,13 @@
 	<script type="text/javascript" src="./js/app.js" defer></script>
 </head>
 <body>
-	<div class="weather-box loading">
+	<div id="loadingScreen">Loading your local weather...</div>
+	<div class="weather-box hidden">
 		<div class="weather-info">
 			<p class="temperature-group">
 				<span id="currentTemp"></span><a id="fahrenheit" class="superscript active" href="#">&deg;F</a><span class="superscript">|</span><a id="celsius" class="superscript" href="#">&deg;C</a>
 			</p>
-			<p id="location">Loading</h3>
+			<p id="location"></h3>
 			<p id="description"></p>
 		</div>
 	</div>

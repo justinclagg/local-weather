@@ -118,19 +118,20 @@ $(document).ready(function () {
 				$('#description').html(json.currently.summary);
 			}
 			// Displays the weather data once loaded
-			$('.weather-box').removeClass('loading');
+			$('#loadingScreen').addClass('hidden');
+			$('.weather-box').removeClass('hidden');
 		});
 	}
 
 	// Switch from Fahrenheit to Celsius
-	$('#celsius').on('click', function () {
+	$('#celsius').on('click', () => {
 		$('#currentTemp').html(currTempC);
 		$(this).addClass('active').removeAttr('href');
 		$('#fahrenheit').removeClass('active').attr('href', '#');
 	});
 
 	// Switch from Celsius to Fahrenheit
-	$('#fahrenheit').on('click', function () {
+	$('#fahrenheit').on('click', () => {
 		$('#currentTemp').html(currTempF);
 		$(this).addClass('active').removeAttr('href');
 		$('#celsius').removeClass('active').attr('href', '#');

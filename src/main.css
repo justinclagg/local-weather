@@ -62,8 +62,16 @@ a:hover,
 	font-size: 35px;
 }
 
-.loading {
+.hidden {
 	display: none;
+}
+
+#loadingScreen {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 30px;
 }
 
 .credit-text {
